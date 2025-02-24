@@ -6,8 +6,7 @@
   "scripts": {
     "lint": "eslint src/**/*.js",
     "start": "node ./src/index.js",
-    "dev": "nodemon src/index.js",
-    "postinstall": "npm rebuild bcrypt --build-from-source"
+    "dev": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "Velikiy_Sergey <velikijjsergey21@gmail.com>",
@@ -20,7 +19,7 @@
     "nodemon": "^3.1.9"
   },
   "dependencies": {
-    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.2",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
