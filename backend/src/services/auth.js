@@ -50,7 +50,7 @@ export const login = async ({ email, password }) => {
     ...newSession,
   });
 
-  return{session : createdSession, user};
+  return {session : createdSession, user};
 };
 
 export const refreshUserSession = async ({ refreshToken }) => {
