@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import { getEnvVar } from './utils/getEnvVar.js';
 import gameRouter from './routers/gameRouter.js';
 import authRouter from './routers/authRouter.js';
+import usersRouter from './routers/userRouter.js';
 import cookieParser from 'cookie-parser';
 import { Server } from 'socket.io';
 import { createServer } from 'http';
@@ -28,6 +29,7 @@ export const startServer = () => {
 
     app.use('/auth', authRouter);
     app.use('/room', gameRouter);
+    app.use('/user', usersRouter);
 
     app.use('*', (req, res, next) => {
         res.status(404).json({

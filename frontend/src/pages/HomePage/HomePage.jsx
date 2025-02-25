@@ -1,14 +1,24 @@
 import Hero from "../../components/Hero/Hero";
 import StartGame from "../StartGame/StartGame";
 import { useSelector } from "react-redux";
-import { selectIsLoggedIn,selectToken} from "../../redux/auth/selectors";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
+import { useDispatch } from "react-redux";
+import { refreshUser } from "../../redux/auth/operations";
 
 
 export default function HomePage() {
     const isLoggedIn = useSelector(selectIsLoggedIn);
-    const token = useSelector(selectToken);
-    console.log(token);
+    const dispatch = useDispatch();
+
+    const handleRefresh = () => {
+        dispatch(refreshUser())
+    }
+
+
+
     return (
-        <div>{isLoggedIn ? <StartGame/> : <Hero/>}</div>
+        <div>
+            <button type="button" onClick={handleRefresh}>Refresh</button>
+            {isLoggedIn ? <StartGame /> : <Hero />}</div>
     )
 }
