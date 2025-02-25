@@ -47,6 +47,7 @@ export const login = async ({ email, password }) => {
 
   return SessionCollection.create({
     userId: user._id,
+    name : user.name,
     ...newSession,
   });
 };

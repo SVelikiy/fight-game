@@ -1,0 +1,21 @@
+.userMenu {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.userName {
+  font-size: 18px;
+  font-weight: 700;
+  color: rgb(73, 72, 72);
+  margin: 0;
+}
+
+.logoutBtn {
+  display: block;
+  padding: 0;
+  height: 40px;
+  width: 60px;
+  background-color: rgb(194, 193, 193);
+  color: blue;
+}

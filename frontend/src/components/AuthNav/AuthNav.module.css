@@ -1,0 +1,9 @@
+.authNav {
+  display: flex;
+  gap: 20px;
+}
+
+.authText {
+  color: rgb(92, 92, 92);
+  font-size: 20px;
+}

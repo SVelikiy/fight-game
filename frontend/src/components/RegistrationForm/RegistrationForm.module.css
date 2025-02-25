@@ -1,0 +1,59 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 300px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+label {
+  color: dimgray;
+  padding-left: 10px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.input {
+  width: 250px;
+  height: 30px;
+  align-self: center;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.button {
+  width: 150px;
+  align-self: center;
+  margin-bottom: 10px;
+}
+
+.errMessageName {
+  color: red;
+  position: absolute;
+  left: 10px;
+  top: 74px;
+}
+
+.errMessageEmail {
+  color: red;
+  position: absolute;
+  left: 10px;
+  top: 178px;
+}
+
+.errMessagePassword {
+  color: red;
+  position: absolute;
+  left: 10px;
+  top: 282px;
+}
+
+.spiner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
