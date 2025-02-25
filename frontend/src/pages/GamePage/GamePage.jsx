@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { socket } from "../../utils/socket";
-import { joinBattle } from "../../redux/auth/operations";
+import { joinBattle } from "../../redux/game/operations";
 
 export default function GamePage () {
   const [roomId, setRoomId] = useState(null);

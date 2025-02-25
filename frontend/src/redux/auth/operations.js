@@ -52,7 +52,7 @@ export const refreshUser = createAsyncThunk(
     try {
       const reduxState = thunkAPI.getState();
       setAuthHeader(reduxState.auth.token);
-      const res = await axios.get("auth/refresh");
+      const res = await axios.get("users/current");
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -64,20 +64,5 @@ export const refreshUser = createAsyncThunk(
       console.log(reduxState.auth.token);
       return reduxState.auth.token !== null;
     },
-  }
-);
-
-export const joinBattle = createAsyncThunk("/room/join",
-  async (_, thunkAPI) => {
-    try {
-      const reduxState = thunkAPI.getState();
-      setAuthHeader(reduxState.auth.token);
-      console.log(reduxState.auth.token);
-      const res = axios.post("/room/join");
-      return res.data;
-    }
-    catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
   }
 );
