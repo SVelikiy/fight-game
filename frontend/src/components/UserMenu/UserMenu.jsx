@@ -9,7 +9,7 @@ export default function UserMenu() {
 
   return (
     <div className={css.userMenu}>
-      <p className={css.userName}>Welcome, {user.name}</p>
+      <p className={css.userName}>Welcome,{user.name}</p>
       <button
         className={css.logoutBtn}
         type="button"

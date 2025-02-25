@@ -39,7 +39,7 @@ export const logIn = createAsyncThunk(
 
 export const logOut = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
   try {
-    axios.post("/users/logout");
+    axios.post("auth/logout");
     clearAuthHeader();
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
@@ -61,7 +61,23 @@ export const refreshUser = createAsyncThunk(
   {
     condition: (_, thunkAPI) => {
       const reduxState = thunkAPI.getState();
+      console.log(reduxState.auth.token);
       return reduxState.auth.token !== null;
     },
+  }
+);
+
+export const joinBattle = createAsyncThunk("/room/join",
+  async (_, thunkAPI) => {
+    try {
+      const reduxState = thunkAPI.getState();
+      setAuthHeader(reduxState.auth.token);
+      console.log(reduxState.auth.token);
+      const res = axios.post("/room/join");
+      return res.data;
+    }
+    catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
   }
 );
