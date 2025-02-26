@@ -18,9 +18,12 @@ const roomSchema = new Schema({
   },
   winner: { type: Schema.Types.ObjectId, ref: "User", default: null },
   hp: {
-    type: Map,
-    of: Number,
-    default: new Map(),
+    type: Object,
+    default: {},
+  },
+  actions: {
+    type: Object,
+    default: {},
   },
   created_at: { type: Date, default: Date.now },
 });
