@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { authReducer } from "./auth/slice";
+import { battleReduser } from "./game/slice";
 import {
   persistStore,
   persistReducer,
@@ -25,6 +26,7 @@ const persistedAuthReducer = persistReducer(persistAuthConfig, authReducer);
 export const store = configureStore({
   reducer: {
     auth: persistedAuthReducer,
+    battle: battleReduser,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

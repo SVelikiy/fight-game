@@ -26,10 +26,33 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<RestrictedRoute component={<LoginPage/>} redirectTo='/'/>} />
-          <Route path="/register" element={<RestrictedRoute component={<RegisterPage />} redirectTo='/login' />} />
-          <Route path='/startgame' element={<PrivateRoute component={<StartGame />} redirectTo='/login' />} />
-          <Route path='/game' element={<PrivateRoute component={<GamePage />} redirectTo='/login' />} />
+          <Route
+            path="/login"
+            element={
+              <RestrictedRoute component={<LoginPage />} redirectTo="/" />
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <RestrictedRoute
+                component={<RegisterPage />}
+                redirectTo="/login"
+              />
+            }
+          />
+          <Route
+            path="/startgame"
+            element={
+              <PrivateRoute component={<StartGame />} redirectTo="/login" />
+            }
+          />
+          <Route
+            path="/gamepage"
+            element={
+              <PrivateRoute component={<GamePage />} redirectTo="/login" />
+            }
+          />
         </Routes>
       </Layout>
     </>

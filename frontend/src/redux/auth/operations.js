@@ -53,7 +53,7 @@ export const refreshUser = createAsyncThunk(
       const reduxState = thunkAPI.getState();
       console.log(reduxState.auth.token);
       setAuthHeader(reduxState.auth.token);
-      const res = await axios.get("users/current");
+      const res = await axios.get("user/current");
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -62,7 +62,6 @@ export const refreshUser = createAsyncThunk(
   {
     condition: (_, thunkAPI) => {
       const reduxState = thunkAPI.getState();
-      console.log(reduxState.auth.token);
       return reduxState.auth.token !== null;
     },
   }
