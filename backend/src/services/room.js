@@ -9,12 +9,18 @@ export const findOrCreateRoom = async (playerId) => {
     if (!room.hp) {
       room.hp = {};
     }
-    room.hp[room.player_1] = room.hp[room.player_1] || 10;
-    room.hp[playerId] = 10;
+    room.hp.set(
+      room.player_1.toString(),
+      room.hp.get(room.player_1.toString()) || 10
+    );
+    room.hp.set(playerId.toString(), 10);
 
     await room.save();
   } else {
-    room = new RoomsCollection({ player_1: playerId, hp: { [playerId]: 10 } });
+    room = new RoomsCollection({
+      player_1: playerId,
+      hp: new Map([[playerId.toString(), 10]]),
+    });
     await room.save();
   }
 

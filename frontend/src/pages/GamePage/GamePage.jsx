@@ -1,14 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import { sendPlayerAction } from "../../redux/game/operations";
 import {
-  selectRoom,
-  selectBattleStatus,
+  selectRoom
 } from "../../redux/game/selectors";
 
 const GamePage = () => {
   const dispatch = useDispatch();
   const room = useSelector(selectRoom);
-  const status = useSelector(selectBattleStatus);
+  console.log(room)
 
   const handleAttack = (attack_zone, block_zone) => {
     if (room) {

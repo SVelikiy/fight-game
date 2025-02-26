@@ -20,7 +20,7 @@ const roomSchema = new Schema({
   hp: {
     type: Map,
     of: Number,
-    default: {},
+    default: new Map(),
   },
   created_at: { type: Date, default: Date.now },
 });
