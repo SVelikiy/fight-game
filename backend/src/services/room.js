@@ -9,8 +9,8 @@ export const findOrCreateRoom = async (playerId) => {
     if (!room.hp) {
       room.hp = {};
     }
-    room.hp[room.player_1] = 10;
-    room.hp[room.player_2] = 10;
+    room.hp[room.player_1] = room.hp[room.player_1] || 10;
+    room.hp[playerId] = 10;
 
     await room.save();
   } else {
