@@ -1,7 +1,7 @@
 import { BattleLogCollection } from "../db/models/battleLog.js";
 import { RoomsCollection } from "../db/models/room.js";
 
-exports.processRound = async (roomId, player1, player2, action1, action2) => {
+export const processRound = async (roomId, player1, player2, action1, action2) => {
   const room = await RoomsCollection.findById(roomId);
   if (!room) return null;
 
